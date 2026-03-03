@@ -68,7 +68,7 @@ function Contact() {
           {/* Social Links */}
           <div className="flex justify-center gap-8 mt-12 text-gray-400 text-xl">
             <a
-              href="www.linkedin.com/in/tanmay-wagh"
+              href="https://www.linkedin.com/in/tanmay-wagh/"
               target="_blank"
               className="hover:text-white transition"
             >
