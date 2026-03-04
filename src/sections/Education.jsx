@@ -32,13 +32,26 @@ function Education() {
               >
                 <div className="space-y-4 border border-white/10 rounded-xl p-6 bg-white/5 backdrop-blur-sm">
                   <h3 className="text-xl text-white font-medium">
-                    Bachelor of Engineering (Computer) 
+                    B.E Computere Engineering
                   </h3>
-
+                  <p>7.26 CGPA</p>
                   <p>
                     Savitribai Phule Pune University
                     <br />
                     2021 – 2025
+                  </p>
+                </div>
+                <br />
+
+                <div className="space-y-4 border border-white/10 rounded-xl p-6 bg-white/5 backdrop-blur-sm">
+                  <h3 className="text-xl text-white font-medium">
+                    HSC ~ (12th)
+                  </h3>
+                  <p>89%</p>
+                  <p>
+                    Maharashtra State Board
+                    <br />
+                    2020 – 2021
                   </p>
                 </div>
               </motion.div>
