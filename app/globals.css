@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   DESIGN SYSTEM — "Stark Drafting Table"
+   A highly creative, light engineering blueprint theme.
+   ========================================================================== */
+
+@theme {
+  /* ── Typography ────────────────────────────────────────────────────────── */
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-display: var(--font-syne), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), 'Fira Code', 'Consolas', monospace;
+
+  /* ── Color Palette — "Drafting Table Light" ────────────────────────────── */
+  --color-bg: #f8f9fa; /* Off-white paper */
+  --color-surface: #ffffff;
+  --color-surface-light: #f3f4f6;
+  --color-surface-hover: #f9fafb;
+
+  --color-border: #e5e7eb;
+  --color-border-hover: #d1d5db;
+
+  --color-foreground: #111827; /* Near black text */
+  --color-muted: #4b5563;
+  --color-dim: #9ca3af;
+
+  --color-accent: #2563eb; /* Electric Blue */
+  --color-accent-hover: #1d4ed8;
+  --color-accent-muted: #2563eb1a;
+
+  --color-success: #10b981;
+
+  /* ── Spacing ───────────────────────────────────────────────────────────── */
+  --spacing-section: clamp(80px, 12vw, 160px);
+
+  /* ── Border Radius ─────────────────────────────────────────────────────── */
+  --radius-card: 0px; /* Neo-brutalism sharp edges */
+  --radius-btn: 0px;
+  --radius-badge: 0px;
+}
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+
+html {
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+  scroll-behavior: auto; /* Lenis handles smooth scrolling */
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography ────────────────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Selection & Blueprint Grid ────────────────────────────────────────── */
+
+::selection {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+/* Engineering Blueprint Grid Background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+}
+
+/* Crosshairs removed due to layout intrusion */
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+  border-left: 1px solid var(--color-border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) var(--color-bg);
+}
+
+/* ==========================================================================
+   CUSTOM COMPONENT CLASSES
+   ========================================================================== */
+
+/* ── Glow Card -> Tech Panel ───────────────────────────────────────────── */
+
+.glow-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.15); /* Neo-brutalist shadow */
+}
+
+.glow-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 8px 8px 0px rgba(37, 99, 235, 0.1);
+  transform: translate(-4px, -4px);
+}
+
+/* ── Section Label ─────────────────────────────────────────────────────── */
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  background: var(--color-accent-muted);
+  padding: 4px 12px;
+  display: inline-block;
+  border: 1px solid var(--color-accent);
+}
+
+/* ── Container & Utilities ─────────────────────────────────────────────── */
+
+.container-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: clamp(1.25rem, 5vw, 2.5rem);
+  padding-right: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+.text-reveal-mask {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* ==========================================================================
+   KEYFRAME ANIMATIONS
+   ========================================================================== */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes line-draw {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes scroll-indicator {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(8px); opacity: 0.4; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+  body {
+    cursor: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
