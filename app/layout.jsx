@@ -1,11 +1,11 @@
-import { Inter, Syne, JetBrains_Mono } from 'next/font/google';
+import { Manrope, Syne, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
 /* ── Font Loading (self-hosted via next/font, zero CLS) ──────────────── */
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-manrope',
   display: 'swap',
 });
 
@@ -66,8 +66,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
-      className={`${inter.variable} ${syne.variable} ${jetbrainsMono.variable}`}
+      className={`${manrope.variable} ${syne.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />

@@ -61,12 +61,12 @@ export default function Navbar() {
       />
       
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'bg-surface/90 backdrop-blur-xl py-4 border-b border-border shadow-sm' : 'bg-transparent py-6 mt-[2px]'
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+          scrolled ? 'bg-surface/90 backdrop-blur-xl py-4 border-b border-border shadow-sm' : 'bg-transparent py-8 mt-[2px]'
         }`}
       >
         <div className="container-main flex items-center justify-between">
-          <a href="#" className="font-display font-bold text-xl tracking-tight z-50 relative">
+          <a href="#" className="font-sans font-bold text-2xl tracking-tighter z-50 relative text-foreground">
             TW<span className="text-accent">.</span>
           </a>
 
@@ -78,7 +78,7 @@ export default function Navbar() {
                   <Magnetic>
                     <a
                       href={link.href}
-                      className="text-muted hover:text-foreground transition-colors text-sm font-medium relative group py-2 block px-2"
+                      className="text-foreground hover:text-accent transition-colors text-sm font-semibold relative group py-2 block px-2"
                     >
                       {link.name}
                       <span className="absolute bottom-0 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full" />
@@ -89,7 +89,7 @@ export default function Navbar() {
             </ul>
             <a
               href="#contact"
-              className="bg-accent text-white px-5 py-2.5 rounded-btn font-medium text-sm hover:bg-accent-hover transition-colors"
+              className="bg-foreground text-bg px-6 py-2.5 rounded-full font-sans font-semibold text-sm hover:bg-accent transition-all duration-300"
             >
               Let's Talk
             </a>
