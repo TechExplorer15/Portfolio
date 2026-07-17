@@ -56,7 +56,7 @@ export default function Contact() {
               href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personal.email}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent text-white px-8 py-4 rounded-btn font-medium text-sm hover:bg-accent-hover transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="btn-sweep bg-accent text-white px-8 py-4 rounded-btn font-medium text-sm flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <FiMail className="w-4 h-4" />
               Say Hello
@@ -64,7 +64,7 @@ export default function Contact() {
             <a 
               href={personal.resume} 
               download
-              className="border border-border text-foreground px-8 py-4 rounded-btn font-medium text-sm hover:border-border-hover hover:bg-surface transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="btn-sweep border border-border text-foreground px-8 py-4 rounded-btn font-medium text-sm flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <FiDownload className="w-4 h-4" />
               Download Resume

@@ -7,11 +7,23 @@ import personal from '@/data/personal';
 
 export default function Hero() {
   const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const textY = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
   
   return (
     <section ref={containerRef} className="min-h-[100svh] relative overflow-hidden bg-bg flex flex-col md:flex-row pt-20 md:pt-0">
       {/* Left Content Half */}
-      <div className="w-full md:w-1/2 flex flex-col justify-between p-6 sm:p-8 md:p-16 lg:p-24 relative z-20 h-[100svh] md:h-[100svh]">
+      <motion.div 
+        style={{ y: textY, opacity: textOpacity }}
+        className="w-full md:w-1/2 flex flex-col justify-between p-6 sm:p-8 md:p-16 lg:p-24 relative z-20 h-[100svh] md:h-[100svh]"
+      >
         
         {/* Top Stats */}
         <motion.div 
@@ -67,14 +79,15 @@ export default function Hero() {
           </a>
         </motion.div>
 
-      </div>
+      </motion.div>
 
       {/* Right Image Half */}
       <motion.div 
         initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
+        style={{ y: imageY, scale: imageScale }}
         transition={{ duration: 1.5, delay: 0.4, ease: [0.76, 0, 0.24, 1] }}
-        className="absolute bottom-0 right-0 w-full md:w-[50%] h-[60vh] md:h-[100svh] flex items-end justify-end pointer-events-none z-10"
+        className="absolute bottom-0 right-0 w-full md:w-[50%] h-[60vh] md:h-[100svh] flex items-end justify-end pointer-events-none z-10 origin-bottom"
       >
         <div className="relative w-full h-full">
           <Image

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import Magnetic from '@/components/ui/Magnetic';
 
@@ -23,11 +23,25 @@ export default function Navbar() {
   });
 
 
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      // Determine scroll direction for hiding/showing
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setHidden(true); // Scrolling down, hide navbar
+      } else {
+        setHidden(false); // Scrolling up, show navbar
+      }
+      
+      setScrolled(currentScrollY > 50);
+      lastScrollY.current = currentScrollY;
     };
-    window.addEventListener('scroll', handleScroll);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -61,9 +75,9 @@ export default function Navbar() {
       />
       
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           scrolled ? 'bg-transparent py-4' : 'bg-transparent py-8 mt-[2px]'
-        }`}
+        } ${hidden ? '-translate-y-[150%]' : 'translate-y-0'}`}
       >
         <div className="container-main flex items-center justify-between w-full">
           <a href="#" className="font-sans font-bold text-2xl tracking-tighter z-50 relative text-foreground shrink-0">

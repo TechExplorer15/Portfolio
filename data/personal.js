@@ -14,7 +14,7 @@ const personal = {
     "My mindset is focused on building software that creates real business value.",
   ],
   stats: [
-    { label: 'Years Exp.', value: '2+' },
+    { label: 'Years Exp.', value: '1+' },
     { label: 'Projects', value: '5+' },
     { label: 'Tech Stack', value: '10+' },
   ],
