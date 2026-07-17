@@ -62,17 +62,17 @@ export default function Navbar() {
       
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          scrolled ? 'bg-surface/90 backdrop-blur-xl py-4 border-b border-border shadow-sm' : 'bg-transparent py-8 mt-[2px]'
+          scrolled ? 'bg-transparent py-4' : 'bg-transparent py-8 mt-[2px]'
         }`}
       >
-        <div className="container-main flex items-center justify-between">
-          <a href="#" className="font-sans font-bold text-2xl tracking-tighter z-50 relative text-foreground">
+        <div className="container-main flex items-center justify-between w-full">
+          <a href="#" className="font-sans font-bold text-2xl tracking-tighter z-50 relative text-foreground shrink-0">
             TW<span className="text-accent">.</span>
           </a>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <ul className="flex items-center gap-8">
+            <ul className="flex items-center gap-6 lg:gap-8 mr-4 lg:mr-8">
               {links.map((link) => (
                 <li key={link.name}>
                   <Magnetic>
@@ -87,17 +87,19 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <a
-              href="#contact"
-              className="bg-foreground text-bg px-6 py-2.5 rounded-full font-sans font-semibold text-sm hover:bg-accent transition-all duration-300"
-            >
-              Let's Talk
-            </a>
+            <Magnetic>
+              <a
+                href="#contact"
+                className="bg-foreground text-bg px-6 py-2.5 rounded-full font-sans font-semibold text-sm hover:bg-accent transition-all duration-300 block"
+              >
+                Let's Talk
+              </a>
+            </Magnetic>
           </nav>
 
           {/* Mobile Toggle */}
           <button
-            className="md:hidden z-50 relative w-8 h-8 flex flex-col justify-center items-center gap-1.5 focus:outline-none"
+            className="md:hidden z-50 relative w-8 h-8 flex flex-col justify-center items-center gap-1.5 focus:outline-none ml-auto"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Menu"
           >

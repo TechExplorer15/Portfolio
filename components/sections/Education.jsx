@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import education from '@/data/education';
+import education, { certifications } from '@/data/education';
 import SectionHeading from '@/components/ui/SectionHeading';
 import GlowCard from '@/components/ui/GlowCard';
 
@@ -52,6 +52,44 @@ export default function Education() {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* Certifications & Training */}
+        <div className="mt-24 md:mt-32">
+          <div className="flex flex-col gap-2 mb-12">
+            <span className="font-mono text-xs text-accent tracking-widest uppercase">// TRAINING</span>
+            <h2 className="text-3xl md:text-5xl font-sans font-light tracking-tighter uppercase text-foreground">
+              Certifications
+            </h2>
+          </div>
+          
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: '-100px' }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          >
+            {certifications.map((cert, index) => (
+              <motion.div key={index} variants={itemVariants}>
+                <GlowCard className="p-6 md:p-8 h-full flex flex-col justify-between group">
+                  <div>
+                    <h4 className="text-xl font-display font-bold text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+                      {cert.title}
+                    </h4>
+                    <p className="font-mono text-sm text-muted">
+                      {cert.issuer}
+                    </p>
+                  </div>
+                  <div className="mt-8 pt-4 border-t border-border">
+                    <span className="font-mono text-xs text-foreground uppercase tracking-widest">
+                      {cert.date}
+                    </span>
+                  </div>
+                </GlowCard>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

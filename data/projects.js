@@ -3,14 +3,12 @@ const projects = [
     id: 1,
     number: '01',
     title: 'Kriya',
-    tagline: 'AI-Powered Learning Platform',
+    tagline: 'Personalized AI Learning Platform',
     description:
-      'A personalized AI learning platform that creates adaptive paths based on each student\'s pace and understanding level.',
-    problem:
-      'Students struggle to find personalized learning paths that adapt to their pace. One-size-fits-all approaches leave many behind.',
+      'Built a full-stack AI platform generating unique, role-specific learning roadmaps based on a student\'s skills and target role. Features a 3-stage AI Curriculum Engine mapping skill gaps to a 12–18 node dependency graph.',
     approach:
-      'Built an intelligent platform using React and Node.js, integrated with AI algorithms that analyze learning patterns and dynamically adjust content difficulty.',
-    tech: ['React', 'Node.js', 'AI/ML', 'Tailwind CSS'],
+      'Engineered a fault-tolerant AI Router with Gemini primary and Groq fallback, ensuring uninterrupted learning. Implemented dual-token auth with silent RTK Query renewal and built an AI Assignment Evaluator scoring submissions 0–100 against acceptance criteria.',
+    tech: ['React.js', 'Redux Toolkit', 'Node.js', 'Express.js', 'MongoDB', 'REST APIs', 'Gemini', 'Groq', 'JWT', 'Vercel'],
     image: '/images/kriya.png',
     live: 'https://kriya-pro.vercel.app/',
     github: '#',
@@ -21,9 +19,7 @@ const projects = [
     title: 'GreenGrid',
     tagline: 'EV & CNG Station Management',
     description:
-      'A comprehensive management system for EV and CNG charging stations with real-time mapping and station analytics.',
-    problem:
-      'EV and CNG station operators lack a unified platform to manage stations, track usage, and provide real-time availability to drivers.',
+      'A comprehensive management system for EV and CNG charging stations with real-time mapping and station analytics. It provides a unified platform to manage stations, track usage, and provide real-time availability to drivers.',
     approach:
       'Developed a full MERN stack application with Google Maps API integration for real-time station mapping, user authentication, and management dashboards.',
     tech: ['MongoDB', 'Express', 'React', 'Node.js', 'Google Maps API'],

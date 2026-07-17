@@ -53,7 +53,9 @@ export default function Contact() {
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 w-full"
           >
             <a 
-              href={`mailto:${personal.email}`}
+              href={`https://mail.google.com/mail/?view=cm&fs=1&to=${personal.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-accent text-white px-8 py-4 rounded-btn font-medium text-sm hover:bg-accent-hover transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               <FiMail className="w-4 h-4" />

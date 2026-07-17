@@ -7,11 +7,11 @@ const personal = {
   email: 'tanmaywagh8220@gmail.com',
   linkedin: 'https://www.linkedin.com/in/tanmay-wagh/',
   github: 'https://github.com/TechExplorer15',
-  resume: '/resume.pdf',
+  resume: '/Tanmay_Wagh_Resume.pdf',
   bio: [
-    "I'm a Computer Science graduate who builds performant, scalable web applications with a strong focus on clean architecture and user experience.",
-    'With hands-on experience in React, modern JavaScript, and responsive UI systems, I approach development with both engineering precision and design awareness.',
-    "I'm actively seeking full-time opportunities where I can contribute to real-world products and deliver meaningful impact.",
+    "I'm a Computer Engineering graduate trained in MERN full stack development, with a strong foundation in JavaScript (ES6+), React, Node.js, REST APIs, and SQL/NoSQL databases.",
+    "Comfortable across the full development cycle from architecture to deployment. I am quick to learn new technologies and have strong DSA and problem-solving instincts.",
+    "My mindset is focused on building software that creates real business value.",
   ],
   stats: [
     { label: 'Years Exp.', value: '2+' },

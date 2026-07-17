@@ -25,10 +25,10 @@ export default function Experience() {
             {experience.map((exp, i) => (
               <motion.div
                 key={exp.id}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ clipPath: 'polygon(0 0, 0 0, 0 100%, 0% 100%)', opacity: 0, x: -20 }}
+                whileInView={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
-                transition={{ duration: 0.6, delay: i * 0.2, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.9, delay: i * 0.15, ease: [0.76, 0, 0.24, 1] }}
                 className="relative"
               >
                 {/* Timeline Dot */}

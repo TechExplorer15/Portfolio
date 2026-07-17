@@ -61,14 +61,14 @@ export default function CustomCursor() {
         animate={{
           x: mousePosition.x - 6,
           y: mousePosition.y - 6,
-          scale: isHovering ? 4 : 1,
+          scale: isHovering ? 6 : 1,
           opacity: isVisible ? 1 : 0,
         }}
         transition={{
           type: 'spring',
-          damping: 20,
-          stiffness: 300,
-          mass: 0.2,
+          damping: 25,
+          stiffness: 250,
+          mass: 0.5,
         }}
       />
       {/* Outer glow */}

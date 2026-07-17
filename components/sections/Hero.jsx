@@ -9,9 +9,9 @@ export default function Hero() {
   const containerRef = useRef(null);
   
   return (
-    <section ref={containerRef} className="min-h-[100svh] relative overflow-hidden bg-bg flex flex-col md:flex-row pt-24 md:pt-0">
+    <section ref={containerRef} className="min-h-[100svh] relative overflow-hidden bg-bg flex flex-col md:flex-row pt-20 md:pt-0">
       {/* Left Content Half */}
-      <div className="w-full md:w-1/2 flex flex-col justify-between p-8 md:p-16 lg:p-24 relative z-10 h-[80svh] md:h-[100svh]">
+      <div className="w-full md:w-1/2 flex flex-col justify-between p-6 sm:p-8 md:p-16 lg:p-24 relative z-20 h-[100svh] md:h-[100svh]">
         
         {/* Top Stats */}
         <motion.div 
@@ -34,16 +34,16 @@ export default function Hero() {
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="my-auto"
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.76, 0, 0.24, 1] }}
+          className="my-auto mt-20 md:mt-auto"
         >
-          <h1 className="text-[clamp(6rem,16vw,14rem)] leading-[0.8] tracking-tighter font-sans font-light text-foreground -ml-2 mb-6">
+          <h1 className="text-[clamp(4.5rem,18vw,14rem)] leading-[0.9] tracking-[-0.05em] font-sans font-light text-foreground -ml-1 md:-ml-2 mb-4 md:mb-6">
             Hello
           </h1>
           <div className="flex items-center gap-3 text-muted">
             <div className="w-8 h-[2px] bg-foreground"></div>
             <p className="text-base md:text-lg text-foreground font-medium">
-              It's {personal.name} a Computer Engineering student
+              It's {personal.name} a Computer Engineer
             </p>
           </div>
         </motion.div>
@@ -53,13 +53,14 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="pb-4 md:pb-12"
+          className="pb-8 md:pb-12"
         >
-          <a href="#about" className="text-sm text-foreground flex items-center gap-2 group hover:text-accent transition-colors font-medium">
+          <a href="#about" className="text-xs md:text-sm text-foreground flex items-center gap-2 group hover:text-accent transition-colors font-semibold uppercase tracking-widest">
             Scroll down 
             <motion.span
-              animate={{ y: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: [0.76, 0, 0.24, 1] }}
+              className="group-hover:translate-y-1 transition-transform"
             >
               ↓
             </motion.span>
@@ -70,10 +71,10 @@ export default function Hero() {
 
       {/* Right Image Half */}
       <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, delay: 0.4 }}
-        className="absolute bottom-0 right-0 w-[90%] md:w-1/2 h-[50vh] md:h-[90vh] flex items-end justify-end pointer-events-none z-0"
+        initial={{ opacity: 0, scale: 1.05 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, delay: 0.4, ease: [0.76, 0, 0.24, 1] }}
+        className="absolute bottom-0 right-0 w-full md:w-[50%] h-[60vh] md:h-[100svh] flex items-end justify-end pointer-events-none z-10"
       >
         <div className="relative w-full h-full">
           <Image
